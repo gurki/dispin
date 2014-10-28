@@ -5,6 +5,7 @@
 
 #include "linear.h"
 #include "floodfill.h"
+#include "ctmf.h"
 
 using namespace std;
 using namespace std::chrono;
@@ -16,33 +17,44 @@ typedef high_resolution_clock hrc;
 int main(const int argc, const char* argv[])
 {
     //  load and display image
-    cv::Mat orig = cv::imread("../data/disparity.bmp", CV_LOAD_IMAGE_GRAYSCALE);
+    cv::Mat input = cv::imread("../data/disparity.bmp", CV_LOAD_IMAGE_GRAYSCALE);
     
-    cv::imshow("window", orig);
+    const int width = input.cols;
+    const int height = input.rows;
+    
+    cv::imshow("window", input);
     cv::waitKey();
     
-    cv::Mat disp;
-    orig.copyTo(disp);
-
-    cv::Mat sharp;
-    orig.copyTo(sharp);
-    
-    //  process
-    const int width = disp.cols;
-    const int height = disp.rows;
-    
+    //  start measuring time
     hrc::time_point t0 = hrc::now();
     
-    sharpenEdges(disp.data, width, height, sharp.data);
-    fillLinear(sharp.data, width, height);
-    cv::medianBlur(sharp, sharp, 5);
+/*
+     pure c from here ...
+ */
+    
+    //  create necessary buffers
+    uchar buffer1[width * height];
+    uchar buffer2[width * height];
+    
+    std::memcpy(buffer1, input.data, sizeof buffer1);
+    
+    //  process
+    sharpenEdges(buffer1, width, height, buffer2, 0);
+    fillLinear(buffer2, width, height, 0, 0, true);
+    ctmf(buffer2, input.data, width, height, width, width, 2, 1, 512*1024);
 
+/*
+     ... to here
+ */
+    
+    //  stop measruing time
     cout << (float)(hrc::now() - t0).count() / 1e6 << endl;
     
     //  plot
-    cv::Mat output;
-    cv::hconcat(orig, sharp, output);
-    cv::imshow("window", output);
+    cv::Mat output = cv::Mat(height, width, CV_8UC1, buffer1);
+    cv::Mat sideBySide;
+    cv::hconcat(input, output, sideBySide);
+    cv::imshow("window", sideBySide);
     cv::waitKey();
     
     return 0;

@@ -40,6 +40,7 @@ struct vec2
 ////////////////////////////////////////////////////////////////////////////////
 //  find and sharpen single-pixel edges
 //    e.g. [0 30 200 210] -> [0 200 200 210]
+//    CARE: does not work in place!
 void sharpenEdges(
     const uchar* data,
     const int width,
