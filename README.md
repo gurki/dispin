@@ -1,4 +1,4 @@
-dispin
+Disparity Map Inpainting
 ======
 
 ![](results/sharp_linear_avg_median=5.png)
