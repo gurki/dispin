@@ -84,7 +84,7 @@ Here the currently final result:
 
 ## Runtime
 - All tests were performed on a _320x240_ greyscale image. <br>
-- All O-Notations are given w.r.t. pixels. <br>
+- All O-Notations are given w.r.t. operations per pixel. <br>
 - All measurements were taken as average on 10000 runs.
 
 Method | Asymptotic Runtime
@@ -98,7 +98,7 @@ Method(s) | Runtime
 sharpenEdges -> fillLinear -> median | **4.168ms** (OpenCV)
 sharpenEdges -> fillLinear -> median | **12.56ms** (ctmf)
 
-Note that OpenCV probably makes use of specific hardware optimisations and/or OpenCL. <br>
+Note that OpenCV makes use of hardware optimisations and/or OpenCL. <br>
 While we do have a constant time inpainting algorithm, the involved constants must and can still be optimised.
 
 
