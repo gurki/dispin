@@ -2,7 +2,7 @@
 
 ![](results/sharp_linear_avg_median=5.png)
 
-This project aims to **develop**, implement and evaluate **efficient** algorithms for single **disparity** map **inpainting** in plain C.
+This project aims to **develop** and implement **efficient** algorithms for single **disparity** map **inpainting** in plain C.
 
 
 ## Details
