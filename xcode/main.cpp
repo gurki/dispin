@@ -2,6 +2,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "linear.h"
+#include "floodfill.h"
 
 using namespace std;
 
@@ -23,9 +24,9 @@ int main(const int argc, const char* argv[])
     const int width = disp.cols;
     const int height = disp.rows;
     
-    fillLinear(data, width, height, 0, 0);
-
-    //  plot
+    layerFloodFill(data, width, height);
+    
+    //  plot
     cv::Mat output;
     cv::hconcat(disp0, disp, output);
     cv::imshow("window", output);
