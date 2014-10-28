@@ -33,11 +33,21 @@ void sharpenEdges(
             const uchar valr = col < width-1 ? data[id+1] : val;
             const uchar valu = row > 0 ? data[id-width] : val;
             const uchar vald = row < height - 1 ? data[id+width] : val;
+            const uchar valul = row > 0 && col > 0 ? data[id-1-width] : val;
+            const uchar valur = row > 0 && col < width-1 ? data[id+1-width] : val;
+            const uchar valdl = row < height-1 && col > 0 ? data[id-1+width] : val;
+            const uchar valdr = row < height-1 && col < width-1 ? data[id+1+width] : val;
 
-            const uchar min = MIN(MIN(vall, valr), MIN(valu, vald));
+            const uchar min1 = MIN(MIN(vall, valr), MIN(valu, vald));
+            const uchar min2 = MIN(MIN(valul, valur), MIN(valdl, valdr));
+            const uchar min = MIN(min1, min2);
 
-            if (min <= thresh) {
-                const uchar max = MAX(MAX(vall, valr), MAX(valu, vald));
+            if (min <= thresh)
+            {
+                const uchar max1 = MAX(MAX(vall, valr), MAX(valu, vald));
+                const uchar max2 = MAX(MAX(valul, valur), MAX(valdl, valdr));
+                const uchar max = MAX(max1, max2);
+
                 out[id] = max;
             }
         }
