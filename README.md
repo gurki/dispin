@@ -74,7 +74,7 @@ Looks like a pretty good case for
 <br><br>
 6. **Median filters**. 
 For now, I use the opencv implementation.
-I thought this could be the most time-consuming part, however, I found a paper introcuding an **O(1)** (in kernel size) median filter, which looks promissing. 
+I thought this could be the most resource-consuming part, however, I found a paper introcuding an **O(1)** (in kernel size) median filter, which looks promissing. 
 Will implement it in C when I have some time.
 Here the currently final result:
 <br><br>
