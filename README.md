@@ -4,10 +4,10 @@
 
 This project aims to **develop** and implement **efficient** algorithms for single **disparity** map **inpainting** in plain C.
 
-[Details](README.md#Details) <br>
-[Timeline](README.md#Timeline) <br>
-[Runtime](README.md#Runtime) <br>
-[Attributions] (README.md#Attributions)
+[Details](#details) <br>
+[Timeline](#timeline) <br>
+[Runtime](#runtime) <br>
+[Attributions] (#attributions)
 
 
 ## Details
