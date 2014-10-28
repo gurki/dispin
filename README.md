@@ -65,7 +65,7 @@ It looks for pixel adjacent to holes and assigns them the brightes value in thei
 Nice. 
 While I first implemented only 4-way-neighbourhoods, **8-way** is necessary for the wanted results.
 <br><br>
-5. Back to the linear interpolation, but this time on the preprocessed input image.
+5. Back to the **linear interpolation**, but this time on the **preprocessed** input image.
 <br><br>
 ![](results/sharp_linear_avg.png)
 <br><br>
