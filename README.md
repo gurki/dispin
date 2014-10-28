@@ -10,13 +10,15 @@ Details
 ====
 
 Input: <br>
-  linearly adressed 8bit grayscale image (unsigned char*) <br>
-  it is assumed, that the pixels to be inpainted have value 0 <br>
+- linearly adressed 8bit grayscale image (unsigned char*) <br>
+- it is assumed, that the pixels to be inpainted have value 0 <br>
   
 Output: <br>
-  inplace processing <br>
-  all masked pixels (a.k.a. holes) should now have meaningful values assigned <br>
+- inplace processing <br>
+- all masked pixels (a.k.a. holes) should now have meaningful values assigned <br>
 
+Runtime: <br>
+- sharpen edges -> linear interpolation -> median filter: 4.168ms
 
 Timeline
 ====
