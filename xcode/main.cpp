@@ -76,7 +76,13 @@ int main(const int argc, const char* argv[])
     
 //    fillLinear(disp.data, width, height, 1, 0);
 //    layerFloodFill(data, width, height);
-    sharpenEdges(disp.data, width, height, sharp.data);
+    uchar* data1 = disp.data;
+    uchar* data2 = sharp.data;
+    
+    for (int i = 0; i < 100; i++) {
+        sharpenEdges(data1, width, height, data2);
+        std::swap(data1, data2);
+    }
     
     //  plot
 //    cv::Mat output;
