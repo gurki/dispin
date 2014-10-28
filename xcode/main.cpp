@@ -7,28 +7,29 @@
 using namespace std;
 
 
+
 ////////////////////////////////////////////////////////////////////////////////
 int main(const int argc, const char* argv[])
 {
     //  load and display image
-    cv::Mat disp = cv::imread("../data/disparity.bmp", CV_LOAD_IMAGE_GRAYSCALE);
-    uchar* data = disp.data;
+    cv::Mat orig = cv::imread("../data/disparity.bmp", CV_LOAD_IMAGE_GRAYSCALE);
     
-    cv::imshow("window", disp);
+    cv::imshow("window", orig);
     cv::waitKey();
     
-    cv::Mat disp0;
-    disp.copyTo(disp0);
+    cv::Mat disp;
+    orig.copyTo(disp);
     
     //  process
     const int width = disp.cols;
     const int height = disp.rows;
     
-    layerFloodFill(data, width, height);
+     fillLinear(disp.data, width, height, 1, 0);
+    // layerFloodFill(data, width, height);
     
-    //  plot
+    //  plot
     cv::Mat output;
-    cv::hconcat(disp0, disp, output);
+    cv::hconcat(orig, disp, output);
     cv::imshow("window", output);
     cv::waitKey();
     
