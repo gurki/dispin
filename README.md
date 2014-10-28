@@ -1,27 +1,24 @@
-Disparity Map Inpainting
-======
+# Disparity Map Inpainting
 
 ![](results/sharp_linear_avg_median=5.png)
 
 This project aims to develop, implement and evaluate efficient algorithms for single disparity map inpainting in plain C.
 
 
-Details
-====
+## Details
 
-Input: <br>
+### Input
 - linearly adressed 8bit grayscale image (unsigned char*) <br>
 - it is assumed, that the pixels to be inpainted have value 0 <br>
   
-Output: <br>
+### Output
 - inplace processing <br>
 - all masked pixels (a.k.a. holes) should now have meaningful values assigned <br>
 
-Runtime: <br>
+### Runtime
 - sharpen edges -> linear interpolation -> median filter: 4.168ms
 
-Timeline
-====
+## Timeline
 
 1. I first tried linear interpolation in both horizontal and vertical scanlines as suggested by Daniel Gurdan.
 Just the horizontal interpolation showed a major problem:
@@ -78,8 +75,9 @@ Here the currently final result:
 ![](results/sharp_linear_avg_median=5.png)
 
 
-Attributions
-====
+## Attributions
+
+Thanks to my bro for giving me something to think about ;).
 
 All files in paper/ are there for convenience only. <br>
 I take no credit whatsoever. <br>
