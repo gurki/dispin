@@ -8,9 +8,8 @@
 #include "ctmf.h"
 
 using namespace std;
-using namespace std::chrono;
 
-typedef high_resolution_clock hrc;
+typedef std::chrono::high_resolution_clock hrc;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -41,7 +40,7 @@ int main(const int argc, const char* argv[])
     //  process
     sharpenEdges(buffer1, width, height, buffer2, 0);
     fillLinear(buffer2, width, height, 0, 0, true);
-    ctmf(buffer2, input.data, width, height, width, width, 2, 1, 512*1024);
+    ctmf(buffer2, buffer1, width, height, width, width, 2, 1, 512*1024);
 
 /*
      ... to here
