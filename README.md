@@ -16,6 +16,7 @@ This project aims to develop, implement and evaluate efficient algorithms for si
 - all masked pixels (a.k.a. holes) should now have meaningful values assigned <br>
 
 #### Runtime
+All tests were performed on a _320x240_ greyscale image.
 - _sharpen edges_ -> _linear interpolation_ -> _median filter_: **4.168ms**
 
 ## Timeline
