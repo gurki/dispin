@@ -16,7 +16,7 @@ This project aims to develop, implement and evaluate efficient algorithms for si
 - all masked pixels (a.k.a. holes) should now have meaningful values assigned <br>
 
 #### Runtime
-- sharpen edges -> linear interpolation -> median filter: 4.168ms
+- _sharpen edges_ -> _linear interpolation_ -> _median filter_: **4.168ms**
 
 ## Timeline
 
@@ -79,7 +79,7 @@ Here the currently final result:
 
 Thanks to my bro for giving me something to think about ;).
 
-All files in paper/ are there for convenience only. <br>
+All files in _paper/_ are there for convenience only. <br>
 I take no credit whatsoever. <br>
 
 - S. Perreault, P. Hébert - Median Filtering in Constant Time.pdf <br>
