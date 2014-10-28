@@ -95,8 +95,8 @@ medianBlur | **O(1)**
 
 Method(s) | Runtime
 ---|---
-sharpenEdges -> fillLinear -> median (OpenCV) | **4.168ms**
-sharpenEdges -> fillLinear -> median (ctmf) | **12.56ms** 
+sharpenEdges -> fillLinear -> median | **4.168ms** (OpenCV)
+sharpenEdges -> fillLinear -> median | **12.56ms** (ctmf)
 
 Note that OpenCV probably makes use of specific hardware optimisations and/or OpenCL. <br>
 While we do have a constant time inpainting algorithm, the involved constants must and can still be optimised.
