@@ -2,7 +2,7 @@
 
 ![](results/sharp_linear_avg_median=5.png)
 
-This project aims to develop, implement and evaluate efficient algorithms for single disparity map inpainting in plain C.
+This project aims to **develop**, implement and evaluate **efficient** algorithms for single **disparity** map **inpainting** in plain C.
 
 
 ## Details
@@ -14,10 +14,6 @@ This project aims to develop, implement and evaluate efficient algorithms for si
 #### Output
 - inplace processing <br>
 - all masked pixels (a.k.a. holes) should now have meaningful values assigned <br>
-
-#### Runtime
-All tests were performed on a _320x240_ greyscale image.
-- _sharpen edges_ -> _linear interpolation_ -> _median filter_: **4.168ms**
 
 ## Timeline
 
@@ -74,6 +70,11 @@ Will implement it in C when I have some time.
 Here the currently final result:
 <br><br>
 ![](results/sharp_linear_avg_median=5.png)
+
+
+## Runtime
+All tests were performed on a _320x240_ greyscale image.
+- _sharpen edges_ -> _linear interpolation_ -> _median filter_: **4.168ms**
 
 
 ## Attributions
