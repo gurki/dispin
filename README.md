@@ -7,15 +7,15 @@ This project aims to develop, implement and evaluate efficient algorithms for si
 
 ## Details
 
-### Input
+#### Input
 - linearly adressed 8bit grayscale image (unsigned char*) <br>
 - it is assumed, that the pixels to be inpainted have value 0 <br>
   
-### Output
+#### Output
 - inplace processing <br>
 - all masked pixels (a.k.a. holes) should now have meaningful values assigned <br>
 
-### Runtime
+#### Runtime
 - sharpen edges -> linear interpolation -> median filter: 4.168ms
 
 ## Timeline
