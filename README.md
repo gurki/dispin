@@ -52,9 +52,10 @@ So, next try.
 I thought, that probably the **vertical** and horizontal lines could complement each other - which of course is not the case but wasn't clear to me at the time. 
 So, vertical interpolation implemented. 
 One gets the final image by merging the horizontal and vertical result. 
-I tried two versions, **averaging** (left) and **maxing** (right), the latter taking the brighter color for each pixel.
+I tried two versions, **averaging** (top) and **maxing** (bottom), the latter taking the brighter color for each pixel.
 <br><br>
-![](results/linearvh_avg_offset=1.png)![](results/linearvh_max_offset=1.png)
+![](results/linearvh_avg_offset=1.png)
+![](results/linearvh_max_offset=1.png)
 <br><br>
 Better, but still same problem.
 <br><br>
