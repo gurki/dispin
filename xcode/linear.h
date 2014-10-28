@@ -43,7 +43,8 @@ void fillLinear(
     const int width,
     const int height,
     const int offset = 0,
-    const uchar thresh = 0
+    const uchar thresh = 0,
+    const bool average = true
 );
 
 
@@ -179,7 +180,8 @@ void fillLinear(
     const int width,
     const int height,
     const int offset,
-    const uchar thresh)
+    const uchar thresh,
+    const bool average)
 {
     uchar vert[width * height];
     std::memcpy(vert, data, sizeof vert);
@@ -189,10 +191,11 @@ void fillLinear(
     
     for (int i = 0; i < width * height; i++)
     {
-        if (data[i] < vert[i]) {
-            data[i] = vert[i];
+        if (average) {
+            data[i] = 0.5f * data[i] + 0.5f * vert[i];
+        } else {
+            data[i] = MAX(data[i], vert[i]);
         }
-//        data[i] = 0.5f * data[i] + 0.5f * vert[i];
     }
 }
 

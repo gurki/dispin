@@ -74,21 +74,15 @@ int main(const int argc, const char* argv[])
     const int width = disp.cols;
     const int height = disp.rows;
     
-//    fillLinear(disp.data, width, height, 1, 0);
-//    layerFloodFill(data, width, height);
-    uchar* data1 = disp.data;
-    uchar* data2 = sharp.data;
-    
-    for (int i = 0; i < 100; i++) {
-        sharpenEdges(data1, width, height, data2);
-        std::swap(data1, data2);
-    }
+//    sharpenEdges(disp.data, width, height, sharp.data);
+    fillLinear(sharp.data, width, height, 1, 0, true);
+    cv::medianBlur(sharp, sharp, 5);
     
     //  plot
-//    cv::Mat output;
-//    cv::hconcat(orig, disp, output);
-//    cv::imshow("window", output);
-    cv::imshow("window", sharp);
+    cv::Mat output;
+    cv::hconcat(orig, sharp, output);
+    cv::imshow("window", output);
+//    cv::imshow("window", sharp);
     cv::waitKey();
     
     return 0;
