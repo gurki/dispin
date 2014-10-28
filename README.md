@@ -4,10 +4,10 @@
 
 This project aims to **develop** and implement **efficient** algorithms for single **disparity** map **inpainting** in plain C.
 
-[Details](#details) <br>
-[Timeline](#timeline) <br>
-[Runtime](#runtime) <br>
-[Attributions] (#attributions)
+1. [Details](#details)
+2. [Timeline](#timeline)
+3. [Runtime](#runtime)
+4. [Attributions] (#attributions)
 
 
 ## Details
@@ -79,7 +79,19 @@ Here the currently final result:
 
 ## Runtime
 All tests were performed on a _320x240_ greyscale image.
-- _sharpen edges_ -> _linear interpolation_ -> _median filter_: **4.168ms**
+All O-Notations are given w.r.t. pixels.
+
+Method | Asymptotic Runtime
+---|---
+sharpenEdges | **O(1)**
+fillLinear | **O(1)**
+medianBlur | **O(1)**
+
+Method(s) | Runtime
+---|---
+sharpenEdges -> fillLinear -> medianBlur | **4.168ms**
+
+While we do have a constant time inpainting algorithm, the involved constants must and can still be optimised.
 
 
 ## Attributions
