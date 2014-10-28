@@ -78,8 +78,9 @@ Here the currently final result:
 
 
 ## Runtime
-All tests were performed on a _320x240_ greyscale image.
-All O-Notations are given w.r.t. pixels.
+All tests were performed on a _320x240_ greyscale image. <br>
+All O-Notations are given w.r.t. pixels. <br>
+All measurements were taken as average on 10000 runs.
 
 Method | Asymptotic Runtime
 ---|---
