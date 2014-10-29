@@ -106,9 +106,9 @@ While we do have a constant time inpainting algorithm, the involved constants mu
 
 Thanks to my bro for giving me something to think about ;).
 
-All files in _paper/_ are there for convenience only. <br>
+<!-- All files in _paper/_ are there for convenience only. <br>
 I take no credit whatsoever. <br>
 
 - S. Perreault, P. Hébert - Median Filtering in Constant Time.pdf <br>
 Published in the September 2007 issue of IEEE Transactions on Image Processing. <br>
-https://nomis80.org/ctmf.html <br>
+https://nomis80.org/ctmf.html <br> -->
