@@ -1,3 +1,4 @@
-src/dispin
-src/dispin.xcodeproj/*
-src/DerivedData/*
+source/dispin
+source/dispin.xcodeproj/*
+source/DerivedData/*
+*.dSYM*
