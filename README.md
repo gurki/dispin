@@ -1,6 +1,6 @@
 # Disparity Map Inpainting
 
-![](results/sharp_linear_avg_median=5.png)
+<img src="results/sharp_linear_avg_median=5.png" width=100% />
 
 This project aims to **develop** and implement **efficient** algorithms for single **disparity** map **inpainting** in plain C.
 
